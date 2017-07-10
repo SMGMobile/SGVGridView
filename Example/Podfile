@@ -1,0 +1,6 @@
+use_frameworks!
+
+source 'https://github.com/CocoaPods/Specs.git'
+target 'SGVGridView-Example' do
+  pod 'SGVGridView', :path => ".."
+end

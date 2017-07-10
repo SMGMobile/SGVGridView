@@ -1,0 +1,63 @@
+
+            {
+                "dataID":"001",
+                "layoutType":"0",
+                "numberInRow":"4",
+                "items":[
+                    {
+                        "itemID": "001001",
+                        "itemName": "标题1", 
+                        "imageURL":"http://10.200.101.226/console/xxx/image/001_001@3x.png",
+                        "order":1,
+                        "path":"http://10.200.101.226/xxx/001_001.html",
+                        "secondPageData":[],
+                        "extraInfo":{"name1":"value1"}
+                    },
+                    {
+                        "itemID": "001002",
+                        "itemName": "标题2", 
+                        "imageURL":"http://10.200.101.226/console/xxx/image/001_002@3x.png",
+                        "order":2,
+                        "path":"http://10.200.101.226/xxx/001_002.html",
+                        "secondPageData":[
+                            {
+                                "itemID": "001002201",
+                                "itemName": "标题201", 
+                                "imageURL":"http://10.200.101.226/console/xxx/image/001_201@3x.png",
+                                "order":1,
+                                "path":"http://10.200.101.226/xxx/001_201.html",
+                                "secondPageData":[],
+                                "extraInfo":{}
+                            },
+                            {
+                                "itemID": "001002202",
+                                "itemName": "标题202", 
+                                "imageURL":"http://10.200.101.226/console/xxx/image/001_202@3x.png",
+                                "order":2,
+                                "path":"http://10.200.101.226/xxx/001_202.html",
+                                "secondPageData":[],
+                                "extraInfo":{}
+                            }
+                        ],
+                        "extraInfo":{}
+                    },
+                    {
+                        "itemID": "002001",
+                        "itemName": "标题21", 
+                        "imageURL":"http://10.200.101.226/console/xxx/image/002_001@3x.png",
+                        "order":3,
+                        "path":"http://10.200.101.226/xxx/002_001.html",
+                        "secondPageData":[],
+                        "extraInfo":{"name1":"value1"}
+                    },
+                    {
+                        "itemID": "002002",
+                        "itemName": "标题22", 
+                        "imageURL":"http://10.200.101.226/console/xxx/image/002_002@3x.png",
+                        "order":4,
+                        "path":"http://10.200.101.226/xxx/002_002.html",
+                        "secondPageData":[],
+                        "extraInfo":{"name1":"value1"}
+                    }
+                ]
+            }

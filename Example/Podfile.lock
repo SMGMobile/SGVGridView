@@ -1,0 +1,21 @@
+PODS:
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SGVGridView (0.1.0):
+    - SDWebImage (~> 3.8)
+
+DEPENDENCIES:
+  - SGVGridView (from `..`)
+
+EXTERNAL SOURCES:
+  SGVGridView:
+    :path: ..
+
+SPEC CHECKSUMS:
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SGVGridView: 0d70e10d0b502d85652ef5f86359965153f3aacd
+
+PODFILE CHECKSUM: 73fb08ccd7638d095b071e3dd836e989a9008e05
+
+COCOAPODS: 1.1.1
