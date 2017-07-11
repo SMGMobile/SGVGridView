@@ -87,7 +87,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     extra=lroundf(screenWidth-(self.numberOfRow - 1)*self.dyLayout.minimumInteritemSpacing - self.dyLayout.sectionInset.left - self.dyLayout.sectionInset.right)%self.numberOfRow;
     
     //总宽度减去左侧，右侧和中间的空白，除以每行个数取整，得到每个九宫格的平均宽度
-    perWidth=lroundf(screenWidth-(self.numberOfRow - 1)*self.dyLayout.minimumInteritemSpacing - self.dyLayout.sectionInset.left - self.dyLayout.sectionInset.right)/self.numberOfRow;
+    perWidth= (int)(lroundf(screenWidth-(self.numberOfRow - 1)*self.dyLayout.minimumInteritemSpacing - self.dyLayout.sectionInset.left - self.dyLayout.sectionInset.right)/self.numberOfRow);
     
     switch (self.dyLayout.itemSizeType) {
         case SGVCollectionViewItemSizeTypeProportion:

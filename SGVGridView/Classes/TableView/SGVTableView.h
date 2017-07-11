@@ -17,7 +17,7 @@
  *  点击列表delegate方法
  *
  *  @param tableView view
- *  @param dataItems 对应数据源
+ *  @param dataItem 对应数据源
  */
 - (void)didTableView:(SGVTableView *)tableView dataItem:(NSDictionary *)dataItem;
 
@@ -45,7 +45,6 @@
  *
  *	@param 	height 	需要的高度
  *
- *	@return 无
  */
 - (void)updateFrameHeight:(CGFloat)height fromTableView:(SGVTableView *)aTableView;
 @end
@@ -69,9 +68,6 @@
 /**
  *	@brief	刷新界面
  *
- *	@param 	无
- *
- *	@return	无
  */
 - (void)reload;
 
@@ -81,7 +77,6 @@
  *	@param 	cellIdentifier 个性化cell标识符
  *	@param 	cellClass 个性化cell类
  *
- *	@return	无
  */
 - (void)setCellIdentifier:(NSString *)cellIdentifier cellClass:(Class)cellClass;
 @end

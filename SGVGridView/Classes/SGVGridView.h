@@ -90,7 +90,7 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
 /**
  *	@brief	当showType为SGVContentShowTypeExpand，view的高度变化后，会调用此方法；
  *
- *	@param 	dynamicLayoutView 	动态布局view
+ *	@param 	aDynamicLayoutView 	动态布局view
  */
 -(void)frameUpdated:(SGVGridView *)aDynamicLayoutView;
 @end
@@ -171,14 +171,12 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
 /**
  *	@brief	根据fitId重新查询数据，并进行初始化
  *
- *	@return	视图的对象
  */
 -(void)servyouSetup;
 
 /**
  *	@brief	刷新界面，数据不会重新查询
  *
- *	@return	无
  */
 - (void)reloadData;
 
@@ -188,7 +186,6 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *	@param 	cellIdentifier 	cell的ID
  *	@param 	cellClass 	cell的类，需继承自SGVCollectionViewBaseCell
  *
- *	@return	无
  */
 - (void)setCollectionViewCellIdentifier:(NSString *)cellIdentifier cellClass:(Class)cellClass;
 
@@ -198,7 +195,6 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *	@param 	cellIdentifier 	cell的ID
  *	@param 	cellClass 	cell的类，需继承自SGVTableViewBaseCell
  *
- *	@return	无
  */
 - (void)setTableViewCellIdentifier:(NSString *)cellIdentifier cellClass:(Class)cellClass;
 

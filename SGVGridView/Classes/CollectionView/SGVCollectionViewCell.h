@@ -19,9 +19,6 @@
 /**
  *	@brief	cell上数据重置到默认数据
  *
- *	@param 	无
- *
- *	@return	无
  */
 -(void)resetEmptyData;
 

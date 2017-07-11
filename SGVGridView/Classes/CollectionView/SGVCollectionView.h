@@ -33,9 +33,8 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *	@brief	九宫格表格被点击方法
  *
  *	@param 	collectionView 	九宫格view
- *	@param 	dataItems 	被点击的九宫格表格对应的数据模型
+ *	@param 	dataItem 	被点击的九宫格表格对应的数据模型
  *
- *	@return 无
  */
 - (void)didCollectionView:(SGVCollectionView *)collectionView dataItem:(NSDictionary *)dataItem;
 /**
@@ -54,7 +53,6 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *	@param 	collectionViewCell 	表格view
  *	@param 	indexPath 	位置
  *
- *	@return 无
  */
 -(void)customWithCollectionView:(UICollectionView *)collectionView collectionViewCell:(SGVCollectionViewBaseCell *)collectionViewCell indexPath:(NSIndexPath *)indexPath;
 /**
@@ -62,7 +60,6 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *
  *	@param 	height 	需要的高度
  *
- *	@return 无
  */
 - (void)updateFrameHeight:(CGFloat)height fromCollectionView:(SGVCollectionView *)aCollectionView;
 
@@ -122,9 +119,6 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
 /**
  *	@brief	刷新界面
  *
- *	@param 	无
- *
- *	@return	无
  */
 - (void)reload;
 
@@ -134,7 +128,6 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *	@param 	cellIdentifier 个性化cell标识符
  *	@param 	cellClass 个性化cell类
  *
- *	@return	无
  */
 - (void)setCellIdentifier:(NSString *)cellIdentifier cellClass:(Class)cellClass;
 @end
