@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGVGridView'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = '表格视图组件'
   s.description      = <<-DESC
 通过字典数据直接初始化表格视图。
