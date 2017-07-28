@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGVGridView'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = '表格视图组件'
   s.description      = <<-DESC
 通过字典数据直接初始化表格视图。
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author           = { '季怀奇' => 'jihq@servyou.com.cn' }
   s.source           = { :git => 'https://github.com/ServyouMobile/SGVGridView.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '7.0'
 
   s.source_files = 'SGVGridView/Classes/**/**/*.{h,m}'
   s.public_header_files = 'SGVGridView/Classes/**/**/*.h'
