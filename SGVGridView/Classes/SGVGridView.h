@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SGVDragProtocol.h"
-
-typedef NS_ENUM(NSUInteger, SGVLayoutType) {
-    SGVLayoutTypeSquare,//九宫格模式,默认
-    SGVLayoutTypeTable   //列表模式
-};
+#import "SGVConst.h"
 
 //动态布局的内容如何滚动
 typedef NS_ENUM(NSUInteger, SGVContentShowType) {

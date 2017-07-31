@@ -41,3 +41,7 @@ extern NSString * const kSGVDataKeyImageURL;
 extern NSString * const kSGVDataKeyOrder;
 // 项目点击后的跳转路径，可以是网络地址、原生VC、原生方法等
 extern NSString * const kSGVDataKeyPath;
+// 二级九宫格数据
+extern NSString * const kSGVDataKeySecondPageData;
+// 扩展信息
+extern NSString * const kSGVDataKeyExtraInfo;

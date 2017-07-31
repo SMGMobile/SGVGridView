@@ -22,3 +22,5 @@ NSString * const kSGVDataKeyItemName = @"itemName";
 NSString * const kSGVDataKeyImageURL = @"imageURL";
 NSString * const kSGVDataKeyOrder = @"order";
 NSString * const kSGVDataKeyPath = @"path";
+NSString * const kSGVDataKeySecondPageData = @"secondPageData";
+NSString * const kSGVDataKeyExtraInfo = @"extraInfo";

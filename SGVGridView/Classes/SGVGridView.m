@@ -12,6 +12,7 @@
 #import "SGVCollectionViewBaseCell.h"
 #import "SGVConst.h"
 #import "SGVGridViewDataName.h"
+#import "NSDictionary+SGVViewData.h"
 
 @interface SGVGridView() <SGVTableViewDelegate,SGVCollectionViewDelegate>
 /**
@@ -97,20 +98,20 @@
 #pragma mark - Private
     
 - (void)servyouSetup {
-    self.fitId = self.viewData[kSGVDataKeyDataID];
-    self.uniqueID = self.viewData[kSGVDataKeyUniqueID];
+    self.fitId = self.viewData.sgvDataID;
+    self.uniqueID = self.viewData.sgvUniqueID;
     
     self.savedOrders = [[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:kSGVUserDefaultKeyCustomOrders, self.uniqueID]] mutableCopy];
     
-    self.layoutType = [self.viewData[kSGVDataKeyLayoutType] intValue];
-    int numberInRow = [self.viewData[kSGVDataKeyNumberInRow] intValue];
+    self.layoutType = self.viewData.sgvLayoutType;
+    int numberInRow = self.viewData.sgvNumberInRow;
     if (numberInRow > 0) {
         _numberOfRow = numberInRow;
     }
     
-    NSArray *squareItems = self.viewData[kSGVDataKeyItems];
+    NSArray *squareItems = self.viewData.sgvItems;
     NSSortDescriptor *sortDescriptor =[NSSortDescriptor sortDescriptorWithKey:kSGVDataKeyOrder ascending:YES];
-    squareItems =  [squareItems sortedArrayUsingDescriptors:@[sortDescriptor]];
+    squareItems = [squareItems sortedArrayUsingDescriptors:@[sortDescriptor]];
     self.dyLayoutItems = squareItems;
     [self transformItems];
     [self reloadData];
@@ -225,7 +226,7 @@
 
 - (void)setNumberOfRow:(int)numberOfRow {
     //如果九宫格服务端配置了每行的数量，则不允许在代码中修改
-    int number = [self.viewData[kSGVDataKeyNumberInRow] intValue];
+    int number = self.viewData.sgvNumberInRow;
     if (number > 0) {
         return;
     }

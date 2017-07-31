@@ -19,5 +19,7 @@
 #import "SGVTableViewBaseCell.h"
 #import "SGVTableViewCell.h"
 #import "SGVUtil.h"
+#import "NSDictionary+SGVViewData.h"
+#import "SGVConst.h"
 
 #endif /* ServyouGridView_h */

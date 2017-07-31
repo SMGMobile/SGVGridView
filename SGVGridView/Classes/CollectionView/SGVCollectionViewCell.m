@@ -11,11 +11,12 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "SGVConst.h"
 #import "SGVGridViewDataName.h"
+#import "NSDictionary+SGVViewData.h"
 
 #define Image_width  45
 #define Image_Height 45
 
-#define Font_TextName [UIFont systemFontOfSize:12.0f*AdaptRate]
+#define Font_TextName [UIFont systemFontOfSize:12.0f*SGVAdaptRate]
 
 #define UnRead_Width 14
 
@@ -59,8 +60,8 @@
     
     if (self.item) {
         //图片
-        CGFloat imageWidth = Image_width*AdaptRate;
-        CGFloat imageHeight = Image_Height*AdaptRate;
+        CGFloat imageWidth = Image_width*SGVAdaptRate;
+        CGFloat imageHeight = Image_Height*SGVAdaptRate;
         
         if (self.imageSize.width>0&&self.imageSize.height>0) {
             imageWidth = self.imageSize.width;
@@ -75,7 +76,7 @@
         NSString *unReadText = kSGVEmptyString;
         
         self.iconImageView.frame = CGRectMake(imageOriginX, imageOriginY, imageWidth, imageHeight);
-        NSString *imageURL = self.item[kSGVDataKeyImageURL];
+        NSString *imageURL = self.item.sgvImageURL;
         if (![SGVUtil strNilOrEmpty:imageURL]) {
             //支持网络图片和本地图片
             if ([imageURL hasPrefix:@"http://"]||[imageURL hasPrefix:@"https://"]) {
@@ -87,13 +88,13 @@
             [self.iconImageView setImage:[UIImage imageNamed:[SGVUtil cellDefaultImageName]]];
         }
     
-        NSString *itemName = self.item[kSGVDataKeyItemName];
+        NSString *itemName = self.item.sgvItemName;
         if (itemName&&itemName.length>0) {
             //文字
             CGFloat lbOriginX = 0.f;
             CGFloat lbOriginY = 0.f;
             CGFloat lbWidth = self.bounds.size.width;
-            CGFloat lbHeight= 29.0f*AdaptRate;
+            CGFloat lbHeight= 29.0f*SGVAdaptRate;
             //            CGFloat lbHeight = self.bounds.size.height-lbOriginY;
 //            CGSize lbSize =[GDUtil getLabelSize:self.squaresDo.name withFloat:12.0f WithLabelWidth:self.width];
 //            CGSize lbSize =[self.squaresDo.name sizeWithAttributes:@{NSFontAttributeName:Font_TextName}];

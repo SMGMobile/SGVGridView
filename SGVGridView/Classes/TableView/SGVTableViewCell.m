@@ -11,6 +11,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "SGVConst.h"
 #import "SGVGridViewDataName.h"
+#import "NSDictionary+SGVViewData.h"
 
 #define UnRead_Width 14
 
@@ -57,14 +58,14 @@
     
     self.imageView.frame = imageViewRect;
     self.textLabel.frame = CGRectMake(self.imageView.frame.origin.x+self.imageView.frame.size.width+10, self.textLabel.frame.origin.y, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
-    self.textLabel.font = [UIFont systemFontOfSize:14.0f*AdaptRate];
+    self.textLabel.font = [UIFont systemFontOfSize:14.0f*SGVAdaptRate];
     
     NSInteger unReadWidth = 0;
     NSInteger unReadHeight= 0;
     NSString *unReadText = kSGVEmptyString;
     
     if (self.item) {
-        NSString *imageURL = self.item[kSGVDataKeyImageURL];
+        NSString *imageURL = self.item.sgvImageURL;
         if (![SGVUtil strNilOrEmpty:imageURL]) {
             //支持网络图片和本地图片
             if ([imageURL hasPrefix:@"http://"]||[imageURL hasPrefix:@"https://"]) {
@@ -76,7 +77,7 @@
             [self.imageView setImage:[UIImage imageNamed:[SGVUtil cellDefaultImageName]]];
         }
         
-        NSString *itemName = self.item[kSGVDataKeyItemName];
+        NSString *itemName = self.item.sgvItemName;
         if (itemName&&itemName.length>0) {
             self.textLabel.text = itemName;
         }
