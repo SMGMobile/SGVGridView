@@ -81,7 +81,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     self.mainView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self setCollectionViewBackgroundColor];
     
-    int screenWidth=self.collectionView.bounds.size.width;
+    int screenWidth=self.bounds.size.width;
     int perWidth, perHeight;
     //总宽度减去左侧，右侧和中间的空白，除以每行个数取余，得到余下的像素
     extra=lroundf(screenWidth-(self.numberOfRow - 1)*self.dyLayout.minimumInteritemSpacing - self.dyLayout.sectionInset.left - self.dyLayout.sectionInset.right)%self.numberOfRow;
@@ -121,7 +121,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
         
         [self.collectionView setFrame:collectRect];
     } else if (self.showType == SGVContentShowTypeExpand) {
-        CGRect collectRect = self.collectionView.frame;
+        CGRect collectRect = self.bounds;
         collectRect.size.height = height;
         self.collectionView.frame = collectRect;
         CGRect selfRect = self.frame;

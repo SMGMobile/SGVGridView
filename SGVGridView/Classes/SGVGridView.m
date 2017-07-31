@@ -119,7 +119,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+    self.dyLayoutTableView.frame = self.bounds;
+    self.dyLayoutCollectionView.frame = self.bounds;
     if (self.sortedItems&&self.sortedItems.count>0) {
         if (_layoutType == SGVLayoutTypeSquare) {
             [self.dyLayoutCollectionView setNeedsLayout];

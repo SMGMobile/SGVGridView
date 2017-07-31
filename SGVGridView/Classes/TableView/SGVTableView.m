@@ -54,7 +54,7 @@ static NSString *identifier = @"SGVTableViewCell";
         if (height<0) {
             height=0;
         }
-        CGRect tableViewRect =  self.tableView.frame;
+        CGRect tableViewRect =  self.bounds;
         tableViewRect.size.height = height;
         self.tableView.frame = tableViewRect;
         
@@ -64,6 +64,7 @@ static NSString *identifier = @"SGVTableViewCell";
         
         [self.delegate updateFrameHeight:height fromTableView:self];
     } else if (self.showType==SGVContentShowTypeScroll) {
+        self.tableView.frame = self.bounds;
         self.tableView.scrollEnabled = YES;
     }
     [self reload];
