@@ -39,7 +39,8 @@
             NSError *error;
             dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         }
-        _gridView = [[SGVGridView alloc]initWithFrame:CGRectMake(15, 80, 345, 0) dynamicLayoutData:dict];
+        _gridView = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:dict];
+        _gridView.frame = CGRectMake(15, 80, 345, 0);
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
     }
