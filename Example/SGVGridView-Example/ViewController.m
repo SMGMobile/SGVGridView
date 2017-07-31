@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <SGVGridView/ServyouGridView.h>
 
-@interface ViewController ()
+@interface ViewController () <SGVGridViewDelegate>
 @property (nonatomic, strong) SGVGridView *gridView;
 @end
 
@@ -19,6 +19,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.gridView];
+}
+
+#pragma mark -
+#pragma mark - SGVGridViewDelegate
+-(void)didSelectedView:(SGVGridView *)dyLayoutView WithItem:(NSDictionary *)item {
+    NSLog(@"%@:%@", item.sgvItemName, item.sgvExtraInfo);
 }
 
 #pragma mark -
@@ -35,6 +41,7 @@
         }
         _gridView = [[SGVGridView alloc]initWithFrame:CGRectMake(15, 80, 345, 0) dynamicLayoutData:dict];
         _gridView.showType = SGVContentShowTypeExpand;
+        _gridView.delegate = self;
     }
     return _gridView;
 }

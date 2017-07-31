@@ -11,7 +11,7 @@
                         "order":1,
                         "path":"http://10.200.101.226/xxx/001_001.html",
                         "secondPageData":[],
-                        "extraInfo":{"name1":"value1"}
+                        "extraInfo":"{\"name1\":\"value1\"}"
                     },
                     {
                         "itemID": "001002",
