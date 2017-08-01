@@ -127,11 +127,11 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
         CGRect selfRect = self.frame;
         if (selfRect.size.height!=height) {
             selfRect.size.height = height;
-            self.mainView.frame = selfRect;
             self.frame = selfRect;
             [self.delegate updateFrameHeight:height fromCollectionView:self];
         }
     }
+    self.mainView.frame = self.bounds;
 }
 
 #pragma mark -
