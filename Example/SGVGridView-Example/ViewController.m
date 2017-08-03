@@ -49,6 +49,7 @@
         _gridView.frame = CGRectMake(15, 0, 345, 0);
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
+        _gridView.isDragSquare = YES;
     }
     return _gridView;
 }
