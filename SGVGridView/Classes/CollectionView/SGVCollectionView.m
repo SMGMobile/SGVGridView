@@ -46,6 +46,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 
 @implementation SGVCollectionView
 @synthesize dyLayout = _dyLayout;
+@synthesize isDragSquare =_isDragSquare;
 
 #pragma mark - Public
 - (void)reload {
@@ -204,6 +205,10 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 
 #pragma mark -
 #pragma mark - SVDynamicLayoutDrag
+- (void)setIsDragSquare:(BOOL)aIsDragSquare {
+    _isDragSquare = aIsDragSquare;
+    self.collectionView.isDragSquare  = aIsDragSquare;
+}
 
 -(void)saveDrag {
     [self.collectionView xw_stopEditingModel];

@@ -12,6 +12,7 @@
  *	@brief	九宫格拖拽的协议
  */
 @protocol SGVDragProtocol <NSObject>
+@property (nonatomic) BOOL isDragSquare;/**<是否拖拽，默认是NO*/
 /**
  开始拖拽
  */

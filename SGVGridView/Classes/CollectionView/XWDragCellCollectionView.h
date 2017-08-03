@@ -86,6 +86,8 @@
 @property (nonatomic, assign) CGFloat shakeLevel;
 /**是否正在编辑模式*/
 @property (nonatomic, assign, readonly, getter=isEditing) BOOL editing;
+/**是否可拖拽,默认NO*/
+@property (nonatomic, assign) BOOL isDragSquare;
 
 /**
  *	@brief	进入编辑模式

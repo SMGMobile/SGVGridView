@@ -387,7 +387,7 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 #pragma mark - public methods
 
 - (void)xw_enterEditingModel{
-    if (!_editing) {
+    if (_isDragSquare && !_editing) {
         _editing = YES;
         _oldMinimumPressDuration =  _longPressGesture.minimumPressDuration;
         _longPressGesture.minimumPressDuration = 0;
@@ -426,7 +426,8 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
             [self xw_stopEditingModel];
         }
     }
-    _longPressGesture.enabled = ([self indexPathForItemAtPoint:point] && [self xwp_judgeCellMove:[self indexPathForItemAtPoint:point]]);
+    _longPressGesture.enabled = (_isDragSquare && ([self indexPathForItemAtPoint:point] && [self xwp_judgeCellMove:[self indexPathForItemAtPoint:point]]));
+
     
     return [super hitTest:point withEvent:event];
 }
@@ -456,10 +457,12 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    if (_editing) {
-        [self xwp_shakeAllCell];
-    }else{
-        [self xwp_stopShakeAllCell];
+    if (_isDragSquare) {
+        if (_editing) {
+            [self xwp_shakeAllCell];
+        }else{
+            [self xwp_stopShakeAllCell];
+        }
     }
 }
 

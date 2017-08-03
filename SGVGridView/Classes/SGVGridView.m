@@ -32,6 +32,7 @@
 @end
 
 @implementation SGVGridView
+@synthesize isDragSquare = _isDragSquare;
 
 #pragma mark - Public
 - (void)reloadData {
@@ -285,6 +286,10 @@
 
 #pragma mark -
 #pragma mark - SVDynamicLayoutDrag
+- (void)setIsDragSquare:(BOOL)aIsDragSquare {
+    _isDragSquare = aIsDragSquare;
+    self.dyLayoutCollectionView.isDragSquare = aIsDragSquare;
+}
 
 - (void)saveDrag {
     [self.savedOrders removeAllObjects];
