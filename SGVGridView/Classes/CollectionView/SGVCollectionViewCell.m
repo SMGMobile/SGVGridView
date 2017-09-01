@@ -13,8 +13,6 @@
 #import "SGVGridViewDataName.h"
 #import "NSDictionary+SGVViewData.h"
 
-#define Font_TextName [UIFont systemFontOfSize:14.0f*SGVAdaptRate]
-
 #define UnRead_Width 14
 
 #define UnReadOffset 6
@@ -89,7 +87,13 @@
         if (itemName&&itemName.length>0) {
             self.functionNameLabel.numberOfLines = 2;
             self.functionNameLabel.frame = CGRectMake(0, 0, self.bounds.size.width, 0);
-            self.functionNameLabel.font = [UIFont systemFontOfSize:14.0*self.scale];
+            CGFloat fontSize = 16.0*self.scale;
+            if (fontSize<12.0f) {
+                fontSize = 12.0f;
+            } else if (fontSize>18) {
+                fontSize = 18.0f;
+            }
+            self.functionNameLabel.font = [UIFont systemFontOfSize:fontSize];
             [self.functionNameLabel setText:itemName];
             [self.functionNameLabel sizeToFit];
             //文字
@@ -168,7 +172,6 @@
     if (!_functionNameLabel) {
         _functionNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [_functionNameLabel setTextAlignment:NSTextAlignmentCenter];
-        [_functionNameLabel setFont:Font_TextName];
         [_functionNameLabel setTextColor:[UIColor blackColor]];
     }
     return _functionNameLabel;
