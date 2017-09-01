@@ -22,4 +22,9 @@ typedef NS_ENUM(NSUInteger, SGVLayoutType) {
     SGVLayoutTypeTable   //列表模式
 };
 
+static CGFloat const kSGVStandardItemSizeWidth = 120.0f;
+static CGFloat const kSGVStandardItemSizeHeight = 120.0f;
+static CGFloat const kSGVStandardImageSizeWidth = 40.0f;
+static CGFloat const kSGVStandardImageSizeHeight = 40.0f;
+
 #endif /* SGVConst_h */

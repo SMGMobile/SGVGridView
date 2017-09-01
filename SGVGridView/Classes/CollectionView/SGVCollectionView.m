@@ -41,7 +41,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 @property (nonatomic, assign) Class cellClass;
 
 @property (nonatomic, strong) NSMutableArray *oldItems;
-
+@property (nonatomic, assign) CGSize actualItemSize;
 @end
 
 @implementation SGVCollectionView
@@ -104,12 +104,12 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
             break;
     }
     
-    self.dyLayout.itemSize = CGSizeMake(perWidth, perHeight);
+    self.actualItemSize = CGSizeMake(perWidth, perHeight);
     
     //设置collectionView实时高度
     double number = self.numberOfRow;
     int row=ceil(self.items.count/number);
-    int height= self.dyLayout.sectionInset.top + self.dyLayout.itemSize.height*row + self.dyLayout.minimumLineSpacing*(row-1) + self.dyLayout.sectionInset.bottom;
+    int height= self.dyLayout.sectionInset.top + self.actualItemSize.height*row + self.dyLayout.minimumLineSpacing*(row-1) + self.dyLayout.sectionInset.bottom;
     if (height<0) {
         height=0;
     }
@@ -176,7 +176,6 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
         [_dyLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         _dyLayout.minimumLineSpacing=1;
         _dyLayout.minimumInteritemSpacing=1;
-        _dyLayout.itemSize = CGSizeMake(90,90);
         _dyLayout.headerReferenceSize = CGSizeMake(0, 0);
         _dyLayout.footerReferenceSize = CGSizeMake(0, 0);
     }
@@ -285,6 +284,10 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     if (self.cellSelectedColor) {
         cell.cellSelectedColor = self.cellSelectedColor;
     }
+    CGFloat widthScale = self.actualItemSize.width / kSGVStandardItemSizeWidth;
+    CGFloat heightScale = self.actualItemSize.height / kSGVStandardItemSizeHeight;
+    CGFloat scale = widthScale < heightScale ? widthScale : heightScale;
+    cell.scale = scale;
     cell.imageSize = self.dyLayout.imageSize;
     
     if (row < self.items.count) {
@@ -301,9 +304,9 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath row]%self.numberOfRow<extra) {
-        return CGSizeMake(self.dyLayout.itemSize.width+1, self.dyLayout.itemSize.height);
+        return CGSizeMake(self.actualItemSize.width+1, self.actualItemSize.height);
     }else {
-        return self.dyLayout.itemSize;
+        return self.actualItemSize;
     }
 }
 

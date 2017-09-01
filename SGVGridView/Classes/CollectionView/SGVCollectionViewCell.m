@@ -13,10 +13,7 @@
 #import "SGVGridViewDataName.h"
 #import "NSDictionary+SGVViewData.h"
 
-#define Image_width  45
-#define Image_Height 45
-
-#define Font_TextName [UIFont systemFontOfSize:12.0f*SGVAdaptRate]
+#define Font_TextName [UIFont systemFontOfSize:14.0f*SGVAdaptRate]
 
 #define UnRead_Width 14
 
@@ -60,16 +57,16 @@
     
     if (self.item) {
         //图片
-        CGFloat imageWidth = Image_width*SGVAdaptRate;
-        CGFloat imageHeight = Image_Height*SGVAdaptRate;
+        CGFloat imageWidth = kSGVStandardImageSizeWidth*self.scale;
+        CGFloat imageHeight = kSGVStandardImageSizeHeight*self.scale;
         
         if (self.imageSize.width>0&&self.imageSize.height>0) {
-            imageWidth = self.imageSize.width;
-            imageHeight = self.imageSize.height;
+            imageWidth = self.imageSize.width*self.scale;
+            imageHeight = self.imageSize.height*self.scale;
         }
         
         CGFloat imageOriginX = (self.bounds.size.width - imageWidth)/2;
-        CGFloat imageOriginY = (self.bounds.size.height - imageHeight)/2;
+        CGFloat imageOriginY = (self.bounds.size.height - imageHeight)/3.0;
         
         NSInteger unReadWidth = 0;
         NSInteger unReadHeight = 0;
@@ -90,22 +87,20 @@
     
         NSString *itemName = self.item.sgvItemName;
         if (itemName&&itemName.length>0) {
+            self.functionNameLabel.numberOfLines = 2;
+            self.functionNameLabel.frame = CGRectMake(0, 0, self.bounds.size.width, 0);
+            self.functionNameLabel.font = [UIFont systemFontOfSize:14.0*self.scale];
+            [self.functionNameLabel setText:itemName];
+            [self.functionNameLabel sizeToFit];
             //文字
             CGFloat lbOriginX = 0.f;
             CGFloat lbOriginY = 0.f;
-            CGFloat lbWidth = self.bounds.size.width;
-            CGFloat lbHeight= 29.0f*SGVAdaptRate;
-            //            CGFloat lbHeight = self.bounds.size.height-lbOriginY;
-//            CGSize lbSize =[GDUtil getLabelSize:self.squaresDo.name withFloat:12.0f WithLabelWidth:self.width];
-//            CGSize lbSize =[self.squaresDo.name sizeWithAttributes:@{NSFontAttributeName:Font_TextName}];
-            imageOriginY = (self.bounds.size.height-imageHeight-lbHeight-4.f)/2.f;
+            CGFloat lbWidth = self.functionNameLabel.frame.size.width > self.bounds.size.width ? self.bounds.size.width : self.functionNameLabel.bounds.size.width;
+            CGFloat lbHeight= self.functionNameLabel.frame.size.height;
+            lbOriginX = (self.bounds.size.width-lbWidth)/2.0;
             lbOriginY = imageOriginY+imageHeight+4.f;
-            
-            self.iconImageView.frame = CGRectMake(imageOriginX, imageOriginY, imageWidth, imageHeight);
         
-            self.functionNameLabel.numberOfLines = 0;
             self.functionNameLabel.frame = CGRectMake(lbOriginX, lbOriginY, lbWidth, lbHeight);
-            [self.functionNameLabel setText:itemName];
             
             if (self.hotCount > 0) {
                 //未读信息数量大于0时显示

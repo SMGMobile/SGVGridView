@@ -7,6 +7,7 @@
 //
 
 #import "SGVCollectionViewLayout.h"
+#import "SGVConst.h"
 
 @implementation SGVCollectionViewLayout
 
@@ -14,7 +15,8 @@
     if (self=[super init]) {
         self.minimumLineSpacing = 1;
         self.minimumInteritemSpacing = 1;
-        self.itemSize = CGSizeMake(90,90);
+        self.itemSize = CGSizeMake(kSGVStandardItemSizeWidth,kSGVStandardItemSizeHeight);
+        self.imageSize = CGSizeMake(kSGVStandardImageSizeWidth, kSGVStandardImageSizeHeight);
     }
     return self;
 }

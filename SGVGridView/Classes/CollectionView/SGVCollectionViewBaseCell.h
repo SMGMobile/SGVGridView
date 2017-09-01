@@ -43,6 +43,10 @@
  */
 @property (nonatomic, assign) CGSize imageSize;
 /**
+ cell实际大小与预设大小的比例，该值受屏幕分辨率，每行cell的个数影响
+ */
+@property (nonatomic, assign) CGFloat scale;
+/**
  *	@brief	cell上数据重置到默认数据
  *
  */
