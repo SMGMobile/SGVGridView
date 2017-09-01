@@ -2,11 +2,11 @@
             {
                 "dataID":"001",
                 "layoutType":"0",
-                "numberInRow":"3",
+                "__numberInRow":"4",
                 "items":[
                     {
                         "itemID": "001001",
-                        "itemName": "标题1", 
+                        "itemName": "一二三四五六",
                         "imageURL":"http://10.200.101.226/console/xxx/image/001_001@3x.png",
                         "order":1,
                         "path":"http://10.200.101.226/xxx/001_001.html",
@@ -15,7 +15,7 @@
                     },
                     {
                         "itemID": "001002",
-                        "itemName": "标题2", 
+                        "itemName": "一二三四五六七八九十一二三四五六七八九十",
                         "imageURL":"http://10.200.101.226/console/xxx/image/001_002@3x.png",
                         "order":2,
                         "path":"http://10.200.101.226/xxx/001_002.html",
@@ -52,7 +52,7 @@
                     },
                     {
                         "itemID": "002002",
-                        "itemName": "标题22", 
+                        "itemName": "",
                         "imageURL":"http://10.200.101.226/console/xxx/image/002_002@3x.png",
                         "order":4,
                         "path":"http://10.200.101.226/xxx/002_002.html",

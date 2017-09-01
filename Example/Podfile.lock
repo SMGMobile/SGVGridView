@@ -2,7 +2,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SGVGridView (0.3.4):
+  - SGVGridView (0.3.5):
     - SDWebImage (~> 3.8)
 
 DEPENDENCIES:
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SGVGridView: 720a4e2a01f2c45edf5f3f2777201fb48d9b9ad7
+  SGVGridView: a10a880953994a565c109d98b90d629aabc0591a
 
 PODFILE CHECKSUM: 73fb08ccd7638d095b071e3dd836e989a9008e05
 
