@@ -77,6 +77,8 @@
         _layoutType = SGVLayoutTypeSquare;
         _numberOfRow = 3;
         _needSeparatrix = YES;
+        _fullRowPadding = YES;
+        _shakeWhenDragging = YES;
         _viewData = data;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI:) name:kSGVGridViewUpdateNotification object:nil];
@@ -174,6 +176,8 @@
     
     self.dyLayoutCollectionView.showType = _showType;
     self.dyLayoutCollectionView.needSeparatrix = _needSeparatrix;
+    self.dyLayoutCollectionView.fullRowPadding = _fullRowPadding;
+    self.dyLayoutCollectionView.shakeWhenDragging = _shakeWhenDragging;
     self.dyLayoutCollectionView.cellBackgroundColor = self.cellBackgroundColor;
     self.dyLayoutCollectionView.cellFontColor = self.cellFontColor;
     self.dyLayoutCollectionView.cellSelectedColor = self.cellSelectedColor;
@@ -218,6 +222,16 @@
 
 - (void)setNeedSeparatrix:(BOOL)needSeparatrix {
     _needSeparatrix = needSeparatrix;
+    [self reloadData];
+}
+
+- (void)setFullRowPadding:(BOOL)fullRowPadding {
+    _fullRowPadding = fullRowPadding;
+    [self reloadData];
+}
+
+- (void)setShakeWhenDragging:(BOOL)shakeWhenDragging {
+    _shakeWhenDragging = shakeWhenDragging;
     [self reloadData];
 }
 

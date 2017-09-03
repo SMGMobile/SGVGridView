@@ -122,7 +122,12 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *  九宫格显示时是否需要分割线，默认有
  */
 @property (nonatomic) BOOL needSeparatrix;
-
+/**
+ 九宫格显示时cell是否需要整行填充，默认YES
+ */
+@property (nonatomic, assign) BOOL fullRowPadding;
+/**是否开启拖动的时候所有cell抖动的效果，默认YES*/
+@property (nonatomic, assign) BOOL shakeWhenDragging;
 /**
  *  九宫格表格背景色
  */

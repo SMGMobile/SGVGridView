@@ -155,6 +155,17 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     [self reload];
 }
 
+- (void)setFullRowPadding:(BOOL)fullRowPadding {
+    _fullRowPadding = fullRowPadding;
+    [self reload];
+}
+
+- (void)setShakeWhenDragging:(BOOL)shakeWhenDragging {
+    _shakeWhenDragging = shakeWhenDragging;
+    self.collectionView.shakeWhenMoveing = _shakeWhenDragging;
+    [self reload];
+}
+
 - (void)setDyLayout:(SGVCollectionViewLayout *)dyLayout {
     _dyLayout = dyLayout;
     self.collectionView.collectionViewLayout = _dyLayout;
@@ -263,10 +274,14 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    double number = self.numberOfRow;
-    //每行都要填满cell
-    NSInteger row =  ceil(self.items.count/number)*self.numberOfRow;
-    return row;
+    if (self.fullRowPadding) {
+        double number = self.numberOfRow;
+        //每行都要填满cell
+        NSInteger row = ceil(self.items.count/number)*self.numberOfRow;
+        return row;
+    } else {
+        return self.items.count;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -90,6 +90,12 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *  是否有分割线 默认YES
  */
 @property (nonatomic) BOOL needSeparatrix;
+/**
+ 九宫格显示时cell是否需要整行填充
+ */
+@property (nonatomic, assign) BOOL fullRowPadding;
+/**是否开启拖动的时候所有cell抖动的效果*/
+@property (nonatomic, assign) BOOL shakeWhenDragging;
 
 /**
  *  表格背景色
