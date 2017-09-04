@@ -215,4 +215,10 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  */
 - (void)setTableViewCellIdentifier:(NSString *)cellIdentifier cellClass:(Class)cellClass;
 
+/**
+ 拖拽后的数据列表
+
+ @return 数组
+ */
+- (NSArray *)draggedItems;
 @end
