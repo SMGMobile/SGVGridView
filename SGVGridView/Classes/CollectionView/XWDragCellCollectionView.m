@@ -106,8 +106,16 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
  *  手势开始
  */
 - (void)xwp_gestureBegan:(UILongPressGestureRecognizer *)longPressGesture{
+    NSIndexPath *indexPath = [self indexPathForItemAtPoint:[longPressGesture locationOfTouch:0 inView:longPressGesture.view]];
+    
+    if ([self.delegate respondsToSelector:@selector(collectionView:cellCanDragAtIndexPath:)]) {
+        if (![self.delegate collectionView:self cellCanDragAtIndexPath:indexPath]) {
+            return;
+        }
+    }
     //获取手指所在的cell
-    _originalIndexPath = [self indexPathForItemAtPoint:[longPressGesture locationOfTouch:0 inView:longPressGesture.view]];
+    _originalIndexPath = indexPath;
+    
     UICollectionViewCell *cell = [self cellForItemAtIndexPath:_originalIndexPath];
     UIView *tempMoveCell = [cell snapshotViewAfterScreenUpdates:NO];
     cell.hidden = YES;
@@ -201,6 +209,11 @@ typedef NS_ENUM(NSUInteger, XWDragCellCollectionViewScrollDirection) {
 -(BOOL)xwp_judgeCellMove:(NSIndexPath *)indexPath
 {
     BOOL isMoving = YES;
+    
+    if ([self.delegate respondsToSelector:@selector(collectionView:canMoveItemAtIndexPath:)]) {
+        return [self.delegate collectionView:self cellCanMoveAtIndexPath:indexPath];
+    }
+    
     NSMutableArray *temp = @[].mutableCopy;
     //获取数据源
     if ([self.dataSource respondsToSelector:@selector(dataSourceArrayOfCollectionView:)]) {

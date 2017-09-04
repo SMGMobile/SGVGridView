@@ -305,6 +305,10 @@
     self.dyLayoutCollectionView.isDragSquare = aIsDragSquare;
 }
 
+- (NSArray *)draggedItems {
+    return self.dyLayoutCollectionView.items;
+}
+
 - (void)saveDrag {
     [self.savedOrders removeAllObjects];
     for (NSInteger index =0; index<self.dyLayoutCollectionView.items.count; index++) {
@@ -376,6 +380,26 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(dragCollectionViewEnd:)]) {
         [self.delegate dragCollectionViewEnd:self];
     }
+}
+
+- (void)collectionViewMovedEnd:(SGVCollectionView *)collectionView {
+    if ([self.delegate respondsToSelector:@selector(collectionViewMovedEnd:)]) {
+        [self.delegate collectionViewMovedEnd:self];
+    }
+}
+
+- (BOOL)collectionView:(SGVCollectionView *)collectionView cellCanDragAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(collectionView:cellCanDragAtIndexPath:)]) {
+        return [self.delegate collectionView:self cellCanDragAtIndexPath:indexPath];
+    }
+    return YES;
+}
+
+- (BOOL)collectionView:(SGVCollectionView *)collectionView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(collectionView:cellCanMoveAtIndexPath:)]) {
+        return [self.delegate collectionView:self cellCanMoveAtIndexPath:indexPath];
+    }
+    return YES;
 }
 
 - (void)didCollectionView:(SGVCollectionView *)collectionView dataItem:(NSDictionary *)dataItem {

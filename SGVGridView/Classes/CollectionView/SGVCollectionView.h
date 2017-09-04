@@ -28,6 +28,22 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *	@brief	拖拽结束
  */
 -(void)dragCollectionViewEnd:(SGVCollectionView *)collectionView;
+/**
+ *	@brief	移动结束
+ */
+-(void)collectionViewMovedEnd:(SGVCollectionView *)collectionView;
+
+/**
+ *  判断某个cell是否可以拖动
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(SGVCollectionView *)collectionView cellCanDragAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  判断某个cell是否可以被当前拖动的cell挤开
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(SGVCollectionView *)collectionView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *	@brief	九宫格表格被点击方法

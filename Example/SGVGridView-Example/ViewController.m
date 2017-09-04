@@ -33,6 +33,20 @@
     NSLog(@"%@:%@", item.sgvItemName, item.sgvExtraInfo);
 }
 
+- (BOOL)collectionView:(SGVGridView *)gridView cellCanDragAtIndexPath:(NSIndexPath *)indexPath {
+    if (gridView.dyLayoutItems.count==indexPath.row+1) {
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)collectionView:(SGVGridView *)gridView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath {
+    if (gridView.dyLayoutItems.count==indexPath.row+1) {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark -
 #pragma mark - getter
 -(SGVGridView *)gridView

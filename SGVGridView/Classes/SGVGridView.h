@@ -32,6 +32,22 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *	@brief	拖拽结束
  */
 -(void)dragCollectionViewEnd:(SGVGridView *)dyLayoutView;
+/**
+ *	@brief	移动结束
+ */
+-(void)collectionViewMovedEnd:(SGVGridView *)gridView;
+
+/**
+ *  判断某个cell是否可以拖动
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(SGVGridView *)gridView cellCanDragAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  判断某个cell是否可以被当前拖动的cell挤开
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(SGVGridView *)gridView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  点击items事件

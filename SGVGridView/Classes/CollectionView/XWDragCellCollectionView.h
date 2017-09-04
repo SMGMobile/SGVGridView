@@ -40,6 +40,18 @@
 -(void)dragCollectionViewEnd:(XWDragCellCollectionView *)collectionView;
 
 /**
+ *  判断某个cell是否可以拖动
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(XWDragCellCollectionView *)collectionView cellCanDragAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  判断某个cell是否可以被当前拖动的cell挤开
+ *  @param indexPath      该cell当前的indexPath
+ */
+- (BOOL)collectionView:(XWDragCellCollectionView *)collectionView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
  *  某个cell将要开始移动的时候调用
  *  @param indexPath      该cell当前的indexPath
  */

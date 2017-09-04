@@ -199,6 +199,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator=NO;
+        _collectionView.minimumPressDuration = 0.5;
         [_collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.cellIdentifier];
         [self setCollectionViewBackgroundColor];
     }
@@ -236,10 +237,27 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 #pragma mark - XWDragCellCollectionViewDataSource,XWDragCellCollectionViewDelegate
 - (void)dragCellCollectionView:(XWDragCellCollectionView *)collectionView newDataArrayAfterMove:(NSArray *)newDataArray {
     _items = newDataArray;
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(collectionViewMovedEnd:)]) {
+        [self.delegate collectionViewMovedEnd:self];
+    }
 }
 
 - (NSArray *)dataSourceArrayOfCollectionView:(XWDragCellCollectionView *)collectionView {
     return _items;
+}
+
+- (BOOL)collectionView:(XWDragCellCollectionView *)collectionView cellCanDragAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(collectionView:cellCanDragAtIndexPath:)]) {
+        return [self.delegate collectionView:self cellCanDragAtIndexPath:indexPath];
+    }
+    return YES;
+}
+
+- (BOOL)collectionView:(XWDragCellCollectionView *)collectionView cellCanMoveAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(collectionView:cellCanMoveAtIndexPath:)]) {
+        return [self.delegate collectionView:self cellCanMoveAtIndexPath:indexPath];
+    }
+    return YES;
 }
 
 /**
