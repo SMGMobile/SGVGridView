@@ -186,6 +186,13 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
        dynamicLayoutData:(NSDictionary *)data;
 
 /**
+ 刷新数据
+
+ @param data 九宫格数据字典
+ */
+- (void)updateWithDynamicLayoutData:(NSDictionary *)data;
+
+/**
  *	@brief	根据fitId重新查询数据，并进行初始化
  *
  */

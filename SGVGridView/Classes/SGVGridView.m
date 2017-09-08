@@ -62,6 +62,11 @@
     }
 }
 
+- (void)updateWithDynamicLayoutData:(NSDictionary *)data {
+    _viewData = data;
+    [self servyouSetup];
+}
+
 #pragma mark -
 #pragma mark - INIT
 - (void)dealloc {
@@ -202,7 +207,8 @@
 #pragma mark - setter
 - (void)setDyLayoutItems:(NSArray *)dyLayoutItems {
     _dyLayoutItems = dyLayoutItems;
-    
+    [self transformItems];
+    [self reloadData];
     if (!_dyLayoutItems) {
         //        [self startWaittingWithSuperView:self];
     }else{
