@@ -25,6 +25,15 @@
     [self.view addSubview:self.gridView2];
     [self.view addSubview:self.gridView3];
     [self.view addSubview:self.gridView4];
+    
+    NSDictionary *dict;
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"001" ofType:@"geojson"];
+    NSData *data = [NSData dataWithContentsOfFile:bundlePath];
+    if (data) {
+        NSError *error;
+        dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    }
+    [self.gridView updateWithDynamicLayoutData:dict];
 }
 
 #pragma mark -
@@ -52,14 +61,7 @@
 -(SGVGridView *)gridView
 {
     if (!_gridView) {
-        NSDictionary *dict;
-        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"001" ofType:@"geojson"];
-        NSData *data = [NSData dataWithContentsOfFile:bundlePath];
-        if (data) {
-            NSError *error;
-            dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        }
-        _gridView = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:dict];
+        _gridView = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:nil];
         _gridView.frame = CGRectMake(15, 0, 345, 0);
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
