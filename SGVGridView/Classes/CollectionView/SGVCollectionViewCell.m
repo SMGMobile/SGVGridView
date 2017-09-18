@@ -99,7 +99,8 @@
             //文字
             CGFloat lbOriginX = 0.f;
             CGFloat lbOriginY = 0.f;
-            CGFloat lbWidth = self.functionNameLabel.frame.size.width > self.bounds.size.width ? self.bounds.size.width : self.functionNameLabel.bounds.size.width;
+            CGFloat lbMaxWidth = self.bounds.size.width - 20.0f;
+            CGFloat lbWidth = self.functionNameLabel.frame.size.width > lbMaxWidth ? lbMaxWidth : self.functionNameLabel.bounds.size.width;
             CGFloat lbHeight= self.functionNameLabel.frame.size.height;
             lbOriginX = (self.bounds.size.width-lbWidth)/2.0;
             lbOriginY = imageOriginY+imageHeight+4.f;
