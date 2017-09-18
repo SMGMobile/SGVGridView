@@ -62,14 +62,14 @@
 {
     if (!_gridView) {
         _gridView = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:nil];
-        _gridView.frame = CGRectMake(15, 0, 345, 0);
+        _gridView.frame = CGRectMake(0, 0, 375, 0);
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
         _gridView.isDragSquare = YES;
-        _gridView.numberOfRow = 5;
-        SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
-        layout.itemSize = CGSizeMake(8, 12);
-        _gridView.dyCollectionViewLayout = layout;
+        _gridView.numberOfRow = 3;
+//        SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
+//        layout.itemSize = CGSizeMake(8, 12);
+//        _gridView.dyCollectionViewLayout = layout;
         _gridView.fullRowPadding = NO;
         _gridView.shakeWhenDragging = NO;
     }
