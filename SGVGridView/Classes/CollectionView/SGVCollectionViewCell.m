@@ -172,7 +172,7 @@
     if (!_functionNameLabel) {
         _functionNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [_functionNameLabel setTextAlignment:NSTextAlignmentCenter];
-        [_functionNameLabel setTextColor:[UIColor blackColor]];
+        [_functionNameLabel setTextColor:[SGVUtil colorWithHexString:kSGVMainTextColor]];
     }
     return _functionNameLabel;
 }

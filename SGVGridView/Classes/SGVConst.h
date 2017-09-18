@@ -9,8 +9,9 @@
 #ifndef SGVConst_h
 #define SGVConst_h
 
-#define SGVAdaptRate ([UIScreen mainScreen].bounds.size.width)/320.0
+#define SGVAdaptRate ([UIScreen mainScreen].bounds.size.width)/375.0
 
+static NSString *kSGVMainTextColor = @"#333333";
 static NSString *kSGVEmptyString = @"";
 
 static NSString *kSGVDefaultImageName = @"SGVGridViewImages.bundle/fxtx";

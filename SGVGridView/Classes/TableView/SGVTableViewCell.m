@@ -42,6 +42,7 @@
     self.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     
     [self.textLabel setFont:[UIFont systemFontOfSize:16.0f]];
+    self.textLabel.textColor = [SGVUtil colorWithHexString:kSGVMainTextColor];
     [self.detailTextLabel setFont:[UIFont systemFontOfSize:13.0f]];
     [self.detailTextLabel setTextColor:[UIColor grayColor]];
 }
@@ -58,7 +59,7 @@
     
     self.imageView.frame = imageViewRect;
     self.textLabel.frame = CGRectMake(self.imageView.frame.origin.x+self.imageView.frame.size.width+10, self.textLabel.frame.origin.y, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
-    self.textLabel.font = [UIFont systemFontOfSize:14.0f*SGVAdaptRate];
+    self.textLabel.font = [UIFont systemFontOfSize:16.0f*SGVAdaptRate];
     
     NSInteger unReadWidth = 0;
     NSInteger unReadHeight= 0;
