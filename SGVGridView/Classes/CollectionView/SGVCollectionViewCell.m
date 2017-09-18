@@ -85,8 +85,6 @@
     
         NSString *itemName = self.item.sgvItemName;
         if (itemName&&itemName.length>0) {
-            self.functionNameLabel.numberOfLines = 2;
-            self.functionNameLabel.frame = CGRectMake(0, 0, self.bounds.size.width, 0);
             CGFloat fontSize = 16.0*self.scale;
             if (fontSize<12.0f) {
                 fontSize = 12.0f;
@@ -94,12 +92,14 @@
                 fontSize = 18.0f;
             }
             self.functionNameLabel.font = [UIFont systemFontOfSize:fontSize];
-            [self.functionNameLabel setText:itemName];
+            self.functionNameLabel.text = itemName;
+            self.functionNameLabel.numberOfLines = 2;
+            CGFloat lbMaxWidth = self.bounds.size.width - 20.0f;
+            self.functionNameLabel.frame = CGRectMake(0, 0, lbMaxWidth, 0);
             [self.functionNameLabel sizeToFit];
             //文字
             CGFloat lbOriginX = 0.f;
             CGFloat lbOriginY = 0.f;
-            CGFloat lbMaxWidth = self.bounds.size.width - 20.0f;
             CGFloat lbWidth = self.functionNameLabel.frame.size.width > lbMaxWidth ? lbMaxWidth : self.functionNameLabel.bounds.size.width;
             CGFloat lbHeight= self.functionNameLabel.frame.size.height;
             lbOriginX = (self.bounds.size.width-lbWidth)/2.0;
