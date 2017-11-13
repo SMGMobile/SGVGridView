@@ -135,6 +135,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     self.mainView.frame = self.bounds;
 }
 
+
 #pragma mark -
 #pragma mark - Private
 - (void)loadCountHotViewWithCell:(SGVCollectionViewBaseCell *)cell WithIndexPath:(NSIndexPath *)indexPath {
