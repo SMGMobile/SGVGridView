@@ -118,7 +118,11 @@
     }
     
     NSArray *squareItems = self.viewData.sgvItems;
-    NSSortDescriptor *sortDescriptor =[NSSortDescriptor sortDescriptorWithKey:kSGVDataKeyOrder ascending:YES];
+    NSSortDescriptor *sortDescriptor =[NSSortDescriptor sortDescriptorWithKey:kSGVDataKeyOrder ascending:YES comparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSString *str1 = [NSString stringWithFormat:@"%@", obj1];
+        NSString *str2 = [NSString stringWithFormat:@"%@", obj2];
+        return [str1 compare:str2 options:NSNumericSearch];
+    }];
     squareItems = [squareItems sortedArrayUsingDescriptors:@[sortDescriptor]];
     self.dyLayoutItems = squareItems;
     [self transformItems];
