@@ -114,7 +114,7 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  @param cell 单元格对象
  @param indexPath 索引
  */
-- (void)gridView:(SGVGridView *)gridView collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)gridView:(SGVGridView *)gridView collectionView:(SGVCollectionView *)collectionView willDisplayCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @class SGVCollectionViewLayout;

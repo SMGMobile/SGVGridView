@@ -356,9 +356,9 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:didEndDisplayingCell:forItemAtIndexPath:)]) {
-        [self.delegate collectionView:self didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:willDisplayCell:forItemAtIndexPath:)]) {
+        [self.delegate collectionView:self willDisplayCell:cell forItemAtIndexPath:indexPath];
     }
 }
 

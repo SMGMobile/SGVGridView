@@ -451,9 +451,9 @@
     }
 }
 
-- (void)collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(gridView:collectionView:didEndDisplayingCell:forItemAtIndexPath:)]) {
-        [self.delegate gridView:self collectionView:collectionView didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
+- (void)collectionView:(SGVCollectionView *)collectionView willDisplayCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gridView:collectionView:willDisplayCell:forItemAtIndexPath:)]) {
+        [self.delegate gridView:self collectionView:collectionView willDisplayCell:cell forItemAtIndexPath:indexPath];
     }
 }
 

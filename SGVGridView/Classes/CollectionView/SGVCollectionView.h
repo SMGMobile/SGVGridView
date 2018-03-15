@@ -85,7 +85,7 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  @param cell 单元格对象
  @param indexPath 索引
  */
-- (void)collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)collectionView:(SGVCollectionView *)collectionView willDisplayCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
