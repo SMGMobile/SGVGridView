@@ -451,4 +451,10 @@
     }
 }
 
+- (void)collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gridView:collectionView:didEndDisplayingCell:forItemAtIndexPath:)]) {
+        [self.delegate gridView:self collectionView:collectionView didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
+    }
+}
+
 @end

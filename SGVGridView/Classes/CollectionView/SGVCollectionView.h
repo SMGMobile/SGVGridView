@@ -78,6 +78,14 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
  *
  */
 - (void)updateFrameHeight:(CGFloat)height fromCollectionView:(SGVCollectionView *)aCollectionView;
+/**
+ 单元格显示后的回调方法
+
+ @param collectionView 九宫格对象
+ @param cell 单元格对象
+ @param indexPath 索引
+ */
+- (void)collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
 
 
 @class SGVGridView;
+@class SGVCollectionView;
 @class SGVCollectionViewBaseCell;
 @class SGVTableViewBaseCell;
 
@@ -105,6 +106,15 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *	@param 	aDynamicLayoutView 	动态布局view
  */
 -(void)frameUpdated:(SGVGridView *)aDynamicLayoutView;
+/**
+ 单元格结束显示后的回调方法
+
+ @param gridView 表格对象
+ @param collectionView 九宫格对象
+ @param cell 单元格对象
+ @param indexPath 索引
+ */
+- (void)gridView:(SGVGridView *)gridView collectionView:(SGVCollectionView *)collectionView didEndDisplayingCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @class SGVCollectionViewLayout;
