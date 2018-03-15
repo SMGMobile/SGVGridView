@@ -56,13 +56,17 @@
     return YES;
 }
 
+- (void)gridView:(SGVGridView *)gridView collectionView:(SGVCollectionView *)collectionView willDisplayCell:(SGVCollectionViewBaseCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didEndDisplayingCell：%@", cell.item.sgvItemName);
+}
+
 #pragma mark -
 #pragma mark - getter
 -(SGVGridView *)gridView
 {
     if (!_gridView) {
         _gridView = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:nil];
-        _gridView.frame = CGRectMake(0, 0, 375, 0);
+        _gridView.frame = CGRectMake(0, 0, self.view.frame.size.width, 0);
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
         _gridView.isDragSquare = YES;
@@ -87,7 +91,7 @@
             dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         }
         _gridView2 = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:dict];
-        _gridView2.frame = CGRectMake(15, 240, 345, 100);
+        _gridView2.frame = CGRectMake(15, 240, self.view.frame.size.width-30, 100);
         _gridView2.showType = SGVContentShowTypeScroll;
         _gridView2.delegate = self;
         _gridView2.numberOfRow = 3;
@@ -110,7 +114,7 @@
             dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         }
         _gridView3 = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:dict];
-        _gridView3.frame = CGRectMake(15, 350, 345, 100);
+        _gridView3.frame = CGRectMake(15, 350, self.view.frame.size.width-30, 100);
         _gridView3.showType = SGVContentShowTypeExpand;
         _gridView3.delegate = self;
         _gridView3.layoutType = SGVLayoutTypeTable;
@@ -129,7 +133,7 @@
             dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         }
         _gridView4 = [[SGVGridView alloc]initWithFrame:CGRectZero dynamicLayoutData:dict];
-        _gridView4.frame = CGRectMake(15, 567, 345, 100);
+        _gridView4.frame = CGRectMake(15, 567, self.view.frame.size.width-30, 100);
         _gridView4.showType = SGVContentShowTypeScroll;
         _gridView4.delegate = self;
         _gridView4.layoutType = SGVLayoutTypeTable;
