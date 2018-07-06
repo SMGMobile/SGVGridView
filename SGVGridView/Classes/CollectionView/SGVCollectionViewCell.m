@@ -75,7 +75,7 @@
         if (![SGVUtil strNilOrEmpty:imageURL]) {
             //支持网络图片和本地图片
             if ([imageURL hasPrefix:@"http://"]||[imageURL hasPrefix:@"https://"]) {
-                [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:[SGVUtil cellDefaultImageName]] options:SDWebImageRefreshCached|SDWebImageAllowInvalidSSLCertificates];
+                [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:[SGVUtil cellDefaultImageName]] options:SDWebImageRefreshCached|SDWebImageRetryFailed|SDWebImageAllowInvalidSSLCertificates];
             } else {
                 [self.iconImageView setImage:[UIImage imageNamed:imageURL]];
             }

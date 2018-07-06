@@ -96,6 +96,9 @@ static NSString *identifier = @"SGVTableViewCell";
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorColor = [UIColor clearColor];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+#endif
     }
     return _tableView;
 }
