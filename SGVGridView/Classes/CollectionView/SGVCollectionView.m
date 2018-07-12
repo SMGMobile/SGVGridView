@@ -203,9 +203,11 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
         _collectionView.minimumPressDuration = 0.5;
         [_collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.cellIdentifier];
         [self setCollectionViewBackgroundColor];
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
-        _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-#endif
+        if (@available(iOS 11.0, *)) {
+            _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            // Fallback on earlier versions
+        }
     }
     return _collectionView;
 }
