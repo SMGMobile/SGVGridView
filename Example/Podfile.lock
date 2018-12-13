@@ -1,21 +1,25 @@
 PODS:
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
-  - SGVGridView (0.3.13):
-    - SDWebImage (~> 3.8)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SGVGridView (1.0.0):
+    - SDWebImage (~> 4.0)
 
 DEPENDENCIES:
   - SGVGridView (from `..`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
+
 EXTERNAL SOURCES:
   SGVGridView:
-    :path: ..
+    :path: ".."
 
 SPEC CHECKSUMS:
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SGVGridView: 4e8206cedacd3122a0c881c3d6cd1319c50d5e05
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SGVGridView: c9be3aefd28ff31fcb667d502e04271563296475
 
 PODFILE CHECKSUM: 73fb08ccd7638d095b071e3dd836e989a9008e05
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

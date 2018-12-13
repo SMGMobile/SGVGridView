@@ -121,7 +121,6 @@
 				C28E18CA1F1387D70036F15B /* Frameworks */,
 				C28E18CB1F1387D70036F15B /* Resources */,
 				E6E165EC569AB29716C1E6C5 /* [CP] Embed Pods Frameworks */,
-				49335A5662AA15E021553943 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,21 +181,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49335A5662AA15E021553943 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGVGridView-Example/Pods-SGVGridView-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9C21380F43029F13CF6C95DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
