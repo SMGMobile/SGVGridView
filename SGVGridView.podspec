@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SGVGridView'
-  s.version          = '0.3.17'
+  s.version          = '1.0.0'
   s.summary          = '表格视图组件'
   s.description      = <<-DESC
 通过字典数据直接初始化表格视图。
@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
     'SGVGridViewImages' => ['SGVGridView/Assets/*.png']
   }
   s.frameworks = 'UIKit'
-  s.dependency 'SDWebImage', '~> 3.8'
+  s.dependency 'SDWebImage', '~> 4.0'
   s.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
 end
