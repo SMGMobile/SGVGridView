@@ -320,6 +320,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     if (self.cellFontColor) {
         cell.cellFontColor = self.cellFontColor;
     }
+    cell.cellBaseFontSize = self.cellBaseFontSize;
     if (self.cellSelectedColor) {
         cell.cellSelectedColor = self.cellSelectedColor;
     }

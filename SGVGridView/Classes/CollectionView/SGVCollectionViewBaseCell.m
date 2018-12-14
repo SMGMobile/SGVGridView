@@ -22,6 +22,7 @@
     self.hotCountShowWay = 0;
     self.hotCount = 0;
     self.countHotView = nil;
+    self.cellBaseFontSize = 0;
 }
 
 #pragma mark - setter

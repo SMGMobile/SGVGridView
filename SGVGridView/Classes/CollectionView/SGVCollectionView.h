@@ -132,6 +132,11 @@ typedef NS_ENUM(NSUInteger, SGVCollectionScrollType) {
 @property (nonatomic, strong) UIColor *cellFontColor;
 
 /**
+ *  表格文字基础字号（以iPhone6界面为准）
+ */
+@property (nonatomic, assign) CGFloat cellBaseFontSize;
+
+/**
  *  表格选中背景色
  */
 @property (nonatomic, strong) UIColor *cellSelectedColor;

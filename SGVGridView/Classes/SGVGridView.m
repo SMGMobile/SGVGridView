@@ -189,6 +189,7 @@
     self.dyLayoutCollectionView.shakeWhenDragging = _shakeWhenDragging;
     self.dyLayoutCollectionView.cellBackgroundColor = self.cellBackgroundColor;
     self.dyLayoutCollectionView.cellFontColor = self.cellFontColor;
+    self.dyLayoutCollectionView.cellBaseFontSize = self.cellBaseFontSize;
     self.dyLayoutCollectionView.cellSelectedColor = self.cellSelectedColor;
     self.dyLayoutCollectionView.numberOfRow = self.numberOfRow;
     [self.dyLayoutCollectionView setNeedsLayout];
@@ -267,6 +268,11 @@
 
 - (void)setCellFontColor:(UIColor *)cellFontColor {
     _cellFontColor = cellFontColor;
+    [self reloadData];
+}
+
+- (void)setCellBaseFontSize:(CGFloat)cellBaseFontSize {
+    _cellBaseFontSize = cellBaseFontSize;
     [self reloadData];
 }
 

@@ -17,6 +17,8 @@
 
 #define UnReadOffset 6
 
+static CGFloat const kSGVDefaultBaseFontSize = 16.0f;
+static CGFloat const kSGVImageLabelSpace = 8.0f;
 
 @interface SGVCollectionViewCell ()
 @property (nonatomic, assign)CGSize countHotViewSize;
@@ -85,7 +87,11 @@
     
         NSString *itemName = self.item.sgvItemName;
         if (itemName&&itemName.length>0) {
-            CGFloat fontSize = 16.0*self.scale;
+            CGFloat baseFontSize = kSGVDefaultBaseFontSize;
+            if (self.cellBaseFontSize > 0) {
+                baseFontSize = self.cellBaseFontSize;
+            }
+            CGFloat fontSize = baseFontSize*self.scale;
             if (fontSize<12.0f) {
                 fontSize = 12.0f;
             } else if (fontSize>18) {
@@ -103,7 +109,7 @@
             CGFloat lbWidth = self.functionNameLabel.frame.size.width > lbMaxWidth ? lbMaxWidth : self.functionNameLabel.bounds.size.width;
             CGFloat lbHeight= self.functionNameLabel.frame.size.height;
             lbOriginX = (self.bounds.size.width-lbWidth)/2.0;
-            lbOriginY = imageOriginY+imageHeight+4.f;
+            lbOriginY = imageOriginY+imageHeight+kSGVImageLabelSpace;
         
             self.functionNameLabel.frame = CGRectMake(lbOriginX, lbOriginY, lbWidth, lbHeight);
             
