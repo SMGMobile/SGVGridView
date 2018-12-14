@@ -28,8 +28,8 @@
 #pragma mark - Public
 -(void)resetEmptyData {
     [super resetEmptyData];
-    
-    self.iconImageView.image = nil;
+    // 不用这句代码会导致多次刷新九宫格时空白cell因为时序问题显示重用前的图片……
+    [self.iconImageView sd_setImageWithURL:nil];
     self.iconImageView.frame = CGRectZero;
     self.functionNameLabel.text=@"";
     self.unReadLabel.text=@"";
