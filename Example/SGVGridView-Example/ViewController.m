@@ -71,6 +71,7 @@
         _gridView.delegate = self;
         _gridView.isDragSquare = YES;
         _gridView.numberOfRow = 3;
+        _gridView.cellBaseFontSize = 26.0f;
 //        SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
 //        layout.itemSize = CGSizeMake(8, 12);
 //        _gridView.dyCollectionViewLayout = layout;
