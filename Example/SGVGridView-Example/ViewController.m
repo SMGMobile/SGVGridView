@@ -70,11 +70,12 @@
         _gridView.showType = SGVContentShowTypeExpand;
         _gridView.delegate = self;
         _gridView.isDragSquare = YES;
-        _gridView.numberOfRow = 3;
+        _gridView.numberOfRow = 4;
         _gridView.cellBaseFontSize = 26.0f;
-//        SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
-//        layout.itemSize = CGSizeMake(8, 12);
-//        _gridView.dyCollectionViewLayout = layout;
+        SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
+        layout.itemSize = CGSizeMake(94, 88);
+        layout.imageSize = CGSizeMake(40, 40);
+        _gridView.dyCollectionViewLayout = layout;
         _gridView.fullRowPadding = NO;
         _gridView.shakeWhenDragging = NO;
     }
@@ -97,7 +98,7 @@
         _gridView2.delegate = self;
         _gridView2.numberOfRow = 3;
         SGVCollectionViewLayout *layout = [SGVCollectionViewLayout new];
-        layout.itemSize = CGSizeMake(12, 8);
+        layout.itemSize = CGSizeMake(120, 80);
         _gridView2.dyCollectionViewLayout = layout;
         _gridView2.fullRowPadding = NO;
     }
