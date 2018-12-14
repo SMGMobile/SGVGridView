@@ -42,6 +42,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
 
 @property (nonatomic, strong) NSMutableArray *oldItems;
 @property (nonatomic, assign) CGSize actualItemSize;
+@property (nonatomic, assign) CGFloat actualSizeScale;
 @end
 
 @implementation SGVCollectionView
@@ -105,6 +106,15 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     }
     
     self.actualItemSize = CGSizeMake(perWidth, perHeight);
+    CGFloat baseItemWidth = kSGVStandardItemSizeWidth;
+    CGFloat baseItemHeight = kSGVStandardItemSizeHeight;
+    if (self.dyLayout.itemSize.width>0 && self.dyLayout.itemSize.height>0) {
+        baseItemWidth = self.dyLayout.itemSize.width;
+        baseItemHeight = self.dyLayout.itemSize.height;
+    }
+    CGFloat widthScale = self.actualItemSize.width / baseItemWidth;
+    CGFloat heightScale = self.actualItemSize.height / baseItemHeight;
+    self.actualSizeScale = widthScale < heightScale ? widthScale : heightScale;
     
     //设置collectionView实时高度
     double number = self.numberOfRow;
@@ -324,10 +334,7 @@ static NSString *identifier = @"SGVCollectionViewCellidentifier";
     if (self.cellSelectedColor) {
         cell.cellSelectedColor = self.cellSelectedColor;
     }
-    CGFloat widthScale = self.actualItemSize.width / kSGVStandardItemSizeWidth;
-    CGFloat heightScale = self.actualItemSize.height / kSGVStandardItemSizeHeight;
-    CGFloat scale = widthScale < heightScale ? widthScale : heightScale;
-    cell.scale = scale;
+    cell.scale = self.actualSizeScale;
     cell.imageSize = self.dyLayout.imageSize;
     
     if (row < self.items.count) {

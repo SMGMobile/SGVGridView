@@ -73,6 +73,7 @@ static CGFloat const kSGVImageLabelSpace = 8.0f;
         NSString *unReadText = kSGVEmptyString;
         
         self.iconImageView.frame = CGRectMake(imageOriginX, imageOriginY, imageWidth, imageHeight);
+        NSLog(@"imageViewSize:%f,%f", imageWidth, imageHeight);
         NSString *imageURL = self.item.sgvImageURL;
         if (![SGVUtil strNilOrEmpty:imageURL]) {
             //支持网络图片和本地图片
@@ -98,6 +99,7 @@ static CGFloat const kSGVImageLabelSpace = 8.0f;
                 fontSize = 18.0f;
             }
             self.functionNameLabel.font = [UIFont systemFontOfSize:fontSize];
+            NSLog(@"labelFontSize:%f", fontSize);
             self.functionNameLabel.text = itemName;
             self.functionNameLabel.numberOfLines = 2;
             CGFloat lbMaxWidth = self.bounds.size.width - 20.0f;
