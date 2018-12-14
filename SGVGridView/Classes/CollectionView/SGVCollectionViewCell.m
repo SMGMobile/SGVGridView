@@ -66,7 +66,7 @@ static CGFloat const kSGVImageLabelSpace = 8.0f;
         }
         
         CGFloat imageOriginX = (self.bounds.size.width - imageWidth)/2;
-        CGFloat imageOriginY = (self.bounds.size.height - imageHeight)/3.0;
+        CGFloat imageOriginY = (self.bounds.size.height - imageHeight)/4.0;
         
         NSInteger unReadWidth = 0;
         NSInteger unReadHeight = 0;
