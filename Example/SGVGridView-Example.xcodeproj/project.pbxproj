@@ -33,7 +33,7 @@
 		C28E18DF1F1387D70036F15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C28E18E11F1387D70036F15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28E18E71F13894C0036F15B /* 001.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 001.geojson; sourceTree = "<group>"; };
-		C2E937EC1F149F2600566209 /* SGVGridView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SGVGridView.podspec; path = ../../SGVGridView.podspec; sourceTree = "<group>"; };
+		C2E937EC1F149F2600566209 /* SGVGridView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SGVGridView.podspec; path = ../../SGVGridView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
