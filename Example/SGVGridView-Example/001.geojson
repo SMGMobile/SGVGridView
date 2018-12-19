@@ -6,7 +6,7 @@
                 "items":[
                     {
                         "itemID": "001001",
-                        "itemName": "一二三四五六一二三四五六一二三四五六",
+                        "itemName": "一\\n二三四五六一二三四五六一二三四五六",
                         "imageURL":"https://pic.52112.com/icon/256/20131031/67/5968.png",
                         "order":1,
                         "path":"http://10.200.101.226/xxx/001_001.html",
