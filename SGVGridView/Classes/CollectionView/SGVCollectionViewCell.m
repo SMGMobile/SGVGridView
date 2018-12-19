@@ -102,7 +102,7 @@ static CGFloat const kSGVImageLabelSpace = 8.0f;
             NSLog(@"labelFontSize:%f", fontSize);
             self.functionNameLabel.text = itemName;
             self.functionNameLabel.numberOfLines = 2;
-            CGFloat lbMaxWidth = self.bounds.size.width - 20.0f;
+            CGFloat lbMaxWidth = self.bounds.size.width - 6.0f;
             self.functionNameLabel.frame = CGRectMake(0, 0, lbMaxWidth, 0);
             [self.functionNameLabel sizeToFit];
             //文字
