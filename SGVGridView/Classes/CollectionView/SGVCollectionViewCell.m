@@ -85,8 +85,8 @@ static CGFloat const kSGVImageLabelSpace = 8.0f;
         }else{
             [self.iconImageView setImage:[UIImage imageNamed:[SGVUtil cellDefaultImageName]]];
         }
-    
         NSString *itemName = self.item.sgvItemName;
+        itemName = [itemName stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
         if (itemName&&itemName.length>0) {
             CGFloat baseFontSize = kSGVDefaultBaseFontSize;
             if (self.cellBaseFontSize > 0) {
