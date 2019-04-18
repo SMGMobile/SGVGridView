@@ -18,6 +18,8 @@
 @property (nonatomic, strong, readonly) NSString *sgvItemID;
 @property (nonatomic, strong, readonly) NSString *sgvItemName;
 @property (nonatomic, strong, readonly) NSString *sgvImageURL;
+@property (nonatomic, strong, readonly) NSString *sgvBigImageURL;
+@property (nonatomic, strong, readonly) NSString *sgvItemDescription;
 @property (nonatomic, strong, readonly) NSString *sgvOrder;
 @property (nonatomic, strong, readonly) NSString *sgvPath;
 @property (nonatomic, strong, readonly) NSDictionary *sgvSecondPageData;

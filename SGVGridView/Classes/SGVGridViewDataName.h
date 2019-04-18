@@ -37,6 +37,11 @@ extern NSString * const kSGVDataKeyItemID;
 extern NSString * const kSGVDataKeyItemName;
 // 项目的图片地址，本地路径或者网络地址
 extern NSString * const kSGVDataKeyImageURL;
+// 项目的大图片地址，本地路径或者网络地址
+extern NSString * const kSGVDataKeyBigImageURL;
+//图片描述
+extern NSString * const kSGVDataKeyItemDescription;
+
 // 项目的排序
 extern NSString * const kSGVDataKeyOrder;
 // 项目点击后的跳转路径，可以是网络地址、原生VC、原生方法等

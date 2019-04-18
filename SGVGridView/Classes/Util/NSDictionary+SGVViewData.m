@@ -45,6 +45,14 @@
     return self[kSGVDataKeyImageURL];
 }
 
+- (NSString *)sgvBigImageURL {
+    return self[kSGVDataKeyBigImageURL];
+}
+
+- (NSString *)sgvItemDescription {
+    return self[kSGVDataKeyItemDescription];
+}
+
 - (NSString *)sgvOrder {
     return self[kSGVDataKeyOrder];
 }
