@@ -3,7 +3,7 @@
 //  Squares
 //
 //  Created by Rain on 2017/2/23.
-//  Copyright © 2017年 servyou. All rights reserved.
+//  Copyright © 2017年 smg. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

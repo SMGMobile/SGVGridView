@@ -1,6 +1,6 @@
 //
 //  SGVGridView.h
-//  TestServyouFoundation
+//  TestSMGFoundation
 //
 //  Created by Rain on 15/9/9.
 //  Copyright (c) 2015年 Sevryou. All rights reserved.
@@ -211,7 +211,7 @@ typedef NS_ENUM(NSUInteger, SGVContentShowType) {
  *	@brief	根据fitId重新查询数据，并进行初始化
  *
  */
--(void)servyouSetup;
+-(void)smgSetup;
 
 /**
  *	@brief	刷新界面，数据不会重新查询

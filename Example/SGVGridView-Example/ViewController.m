@@ -3,11 +3,11 @@
 //  SGVGridView-Example
 //
 //  Created by 季风 on 2017/7/10.
-//  Copyright © 2017年 servyou. All rights reserved.
+//  Copyright © 2017年 smg. All rights reserved.
 //
 
 #import "ViewController.h"
-#import <SGVGridView/ServyouGridView.h>
+#import <SGVGridView/SMGGridView.h>
 
 @interface ViewController () <SGVGridViewDelegate>
 @property (nonatomic, strong) SGVGridView *gridView;

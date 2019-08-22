@@ -1,13 +1,13 @@
 //
-//  ServyouGridView.h
+//  SMGGridView.h
 //  Pods
 //
 //  Created by 季风 on 2017/7/10.
 //
 //
 
-#ifndef ServyouGridView_h
-#define ServyouGridView_h
+#ifndef SMGGridView_h
+#define SMGGridView_h
 
 #import "SGVGridView.h"
 #import "SGVGridViewDataName.h"
@@ -22,4 +22,4 @@
 #import "NSDictionary+SGVViewData.h"
 #import "SGVConst.h"
 
-#endif /* ServyouGridView_h */
+#endif /* SMGGridView_h */

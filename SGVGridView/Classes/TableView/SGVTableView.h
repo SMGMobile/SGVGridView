@@ -1,6 +1,6 @@
 //
 //  SGVTableView.h
-//  TestServyouFoundation
+//  TestSMGFoundation
 //
 //  Created by Rain on 15/9/14.
 //  Copyright (c) 2015年 Sevryou. All rights reserved.

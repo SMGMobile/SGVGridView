@@ -1,6 +1,6 @@
 //
 //  SGVTableViewCell.m
-//  TestServyouFoundation
+//  TestSMGFoundation
 //
 //  Created by Rain on 15/9/14.
 //  Copyright (c) 2015年 Sevryou. All rights reserved.
@@ -39,12 +39,12 @@
 {
     self =[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self servyouSetup];
+        [self smgSetup];
     }
     return self;
 }
 
--(void)servyouSetup
+-(void)smgSetup
 {
     [self addSubview:self.unReadLabel];
     [self bringSubviewToFront:self.unReadLabel];

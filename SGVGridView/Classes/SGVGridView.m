@@ -1,6 +1,6 @@
 //
 //  SGVGridView.m
-//  TestServyouFoundation
+//  TestSMGFoundation
 //
 //  Created by Rain on 15/9/9.
 //  Copyright (c) 2015年 Sevryou. All rights reserved.
@@ -64,7 +64,7 @@
 
 - (void)updateWithDynamicLayoutData:(NSDictionary *)data {
     _viewData = data;
-    [self servyouSetup];
+    [self smgSetup];
 }
 
 #pragma mark -
@@ -87,7 +87,7 @@
         _viewData = data;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI:) name:kSGVGridViewUpdateNotification object:nil];
-        [self servyouSetup];
+        [self smgSetup];
     }
     return self;
 }
@@ -99,13 +99,13 @@
     NSString *dataID = [notification.userInfo objectForKey:kSGVNotificationKeyDataID];
     if ([dataID isEqualToString:self.fitId]&&data) {
         self.viewData = data;
-        [self servyouSetup];
+        [self smgSetup];
     }
 }
 
 #pragma mark - Private
     
-- (void)servyouSetup {
+- (void)smgSetup {
     self.fitId = self.viewData.sgvDataID;
     self.uniqueID = self.viewData.sgvUniqueID;
     
