@@ -138,7 +138,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = servyou;
+				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					C28E18CC1F1387D70036F15B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -352,7 +352,7 @@
 				DEVELOPMENT_TEAM = LKP82WSHEH;
 				INFOPLIST_FILE = "SGVGridView-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.servyou.SGVGridView-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.SGVGridView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -365,7 +365,7 @@
 				DEVELOPMENT_TEAM = LKP82WSHEH;
 				INFOPLIST_FILE = "SGVGridView-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.servyou.SGVGridView-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.SGVGridView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
